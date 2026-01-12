@@ -1,40 +1,84 @@
+/* Fonts & body */
 body {
   margin: 0;
-  font-family: 'Comic Sans MS', cursive, sans-serif;
-  background: pink;
+  font-family: 'Dancing Script', 'Pacifico', cursive;
+  background: linear-gradient(120deg, #ff9a9e, #fad0c4);
   color: white;
   text-align: center;
   overflow: hidden;
+  height: 100vh;
+  position: relative;
 }
 
+/* Container */
 #container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100%;
+  z-index: 1;
 }
 
+/* Messages */
+#introMessage, #valentineQuestion, #noBox p, #yesBox p {
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 8px #ff69b4;
+  margin: 20px;
+}
+
+/* Buttons */
 button {
-  padding: 1rem 2rem;
-  font-size: 1.2rem;
-  border: none;
-  border-radius: 10px;
-  margin: 10px;
   cursor: pointer;
-  background-color: red;
+  border: none;
+  border-radius: 20px;
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  margin: 10px;
   color: white;
+  background: linear-gradient(45deg, #ff69b4, #ff1493);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+/* Hidden elements */
 .hidden { display: none; }
 
-/* Floating hearts animation */
-.kissGif {
-  width: 300px;
-  animation: floatHearts 2s ease-in-out infinite;
+/* Animations */
+.fadeIn { animation: fadeIn 2s ease-in forwards; opacity: 0; }
+.bounce { animation: bounce 1s infinite; }
+
+@keyframes fadeIn { to { opacity: 1; } }
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Floating hearts */
+.heart {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: url('heart.png') no-repeat center/contain;
+  animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(100vh) scale(0.5); opacity: 0.7; }
+  100% { transform: translateY(-10vh) scale(1); opacity: 1; }
+}
+
+/* Kiss GIF */
+.kissGif { 
+  width: 300px; 
+  animation: floatHearts 2s ease-in-out infinite; 
 }
 
 @keyframes floatHearts {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
-}
+  50%

@@ -3,38 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Will You Be My Valentine?</title>
+  <title>My Valentine Surprise</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Dancing+Script&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <!-- Background music -->
   <audio id="romanceMusic" src="romantic-music.mp3" autoplay loop></audio>
 
+  <!-- Floating hearts container -->
+  <div id="heartsContainer"></div>
+
   <div id="container">
+    <!-- Intro message -->
     <div id="messageBox">
-      <p id="introMessage">Hey, my love. I didn’t plan this, but since you asked about my plans for Valentine’s Day… first, let me ask you this, my princess…</p>
-      <button id="nextBtn">Next</button>
+      <p id="introMessage" class="fadeIn">
+        I know you're my girlfriend and my love already. I didn’t plan to make this, but since you want to know what my plan for Valentine’s Day is, first let me ask you this, my princess…
+      </p>
+      <button id="nextBtn" class="bounce">Next</button>
     </div>
 
+    <!-- Valentine question -->
     <div id="questionBox" class="hidden">
-      <p id="valentineQuestion">My Baby, My Love, My Princess, My Dragon, My One and Only Ayshea… Will you be my Valentine?</p>
+      <p id="valentineQuestion" class="fadeIn">
+        My Baby, My Love, My Princess, My Dragon, My One and Only Ayshea… Will you be my Valentine?
+      </p>
       <div class="choices">
         <button class="choiceBtn" id="yesBtn">Yes</button>
-        <button class="choiceBtn" id="noBtn">No</button>
-      </div>
-    </div>
-
-    <div id="noBox" class="hidden">
-      <p>Hmpp… I love you so much, don’t be silly, my beautiful, pretty princess!</p>
-      <button id="retryBtn">Yes or Yes</button>
-    </div>
-
-    <div id="yesBox" class="hidden">
-      <p>Yay! 💖 You’re mine forever!</p>
-      <img src="kiss-scene.gif" alt="Kiss scene" class="kissGif">
-    </div>
-  </div>
-
-  <script src="script.js"></script>
-</body>
-</html>
+        <button class="choiceBtn" id="noBtn">No</bu
