@@ -1,4 +1,3 @@
-/* Fonts & body */
 body {
   margin: 0;
   font-family: 'Dancing Script', 'Pacifico', cursive;
@@ -10,7 +9,6 @@ body {
   position: relative;
 }
 
-/* Container */
 #container {
   display: flex;
   flex-direction: column;
@@ -20,14 +18,12 @@ body {
   z-index: 1;
 }
 
-/* Messages */
-#introMessage, #valentineQuestion, #noBox p, #yesBox p {
-  font-size: 2.5rem;
+p {
+  font-size: 2rem;
   text-shadow: 2px 2px 8px #ff69b4;
   margin: 20px;
 }
 
-/* Buttons */
 button {
   cursor: pointer;
   border: none;
@@ -46,25 +42,30 @@ button:hover {
   box-shadow: 0 8px 20px rgba(0,0,0,0.5);
 }
 
-/* Hidden elements */
 .hidden { display: none; }
 
-/* Animations */
-.fadeIn { animation: fadeIn 2s ease-in forwards; opacity: 0; }
-.bounce { animation: bounce 1s infinite; }
-
-@keyframes fadeIn { to { opacity: 1; } }
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+/* Kiss GIF */
+.kissGif { 
+  width: 300px; 
+  margin-top: 20px;
 }
 
-/* Floating hearts */
+/* Floating hearts container */
+#heartsContainer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
 .heart {
   position: absolute;
-  width: 30px;
-  height: 30px;
-  background: url('heart.png') no-repeat center/contain;
+  width: 40px;
+  height: 40px;
+  background-size: contain;
+  background-repeat: no-repeat;
   animation: floatUp linear infinite;
 }
 
@@ -72,13 +73,3 @@ button:hover {
   0% { transform: translateY(100vh) scale(0.5); opacity: 0.7; }
   100% { transform: translateY(-10vh) scale(1); opacity: 1; }
 }
-
-/* Kiss GIF */
-.kissGif { 
-  width: 300px; 
-  animation: floatHearts 2s ease-in-out infinite; 
-}
-
-@keyframes floatHearts {
-  0%, 100% { transform: translateY(0); }
-  50%
