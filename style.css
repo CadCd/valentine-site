@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background: pink;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+button {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 10px;
+  margin: 10px;
+  cursor: pointer;
+  background-color: red;
+  color: white;
+}
+
+.hidden { display: none; }
+
+/* Floating hearts animation */
+.kissGif {
+  width: 300px;
+  animation: floatHearts 2s ease-in-out infinite;
+}
+
+@keyframes floatHearts {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
