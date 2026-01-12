@@ -1,58 +1,34 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Elements
-    const nextBtn = document.getElementById('nextBtn');
-    const retryBtn = document.getElementById('retryBtn');
-    const yesBtn = document.getElementById('yesBtn');
-    const noBtn = document.getElementById('noBtn');
+function goQuestion(){
+  document.getElementById('intro').style.display="none";
+  document.getElementById('step1').style.display="block";
 
-    const messageBox = document.getElementById('messageBox');
-    const questionBox = document.getElementById('questionBox');
-    const noBox = document.getElementById('noBox');
-    const yesBox = document.getElementById('yesBox');
+  setTimeout(()=>{
+    document.getElementById('step1').style.display="none";
+    document.getElementById('step2').style.display="block";
+  }, 3000);
+}
 
-    const heartsContainer = document.getElementById('heartsContainer');
+function no(){
+  document.getElementById('step2').style.display="none";
+  document.getElementById('noBox').style.display="block";
+}
 
-    // Button events
-    nextBtn.onclick = () => {
-        messageBox.classList.add('hidden');
-        questionBox.classList.remove('hidden');
-    }
+function yes(){
+  document.getElementById('step2').style.display="none";
+  document.getElementById('noBox').style.display="none";
+  document.getElementById('yesBox').style.display="block";
+}
 
-    noBtn.onclick = () => {
-        questionBox.classList.add('hidden');
-        noBox.classList.remove('hidden');
-    }
+/* Floating flowers */
+const flowers = ["flower1.gif","flower2.gif","flower3.gif"];
 
-    retryBtn.onclick = () => {
-        noBox.classList.add('hidden');
-        questionBox.classList.remove('hidden');
-    }
+function spawnFlower(){
+  const f = document.createElement("img");
+  f.src = flowers[Math.floor(Math.random()*flowers.length)];
+  f.style.left = Math.random()*100+"vw";
+  f.style.animationDuration = (6+Math.random()*6)+"s";
+  document.getElementById("flowers").appendChild(f);
+  setTimeout(()=>f.remove(),12000);
+}
 
-    yesBtn.onclick = () => {
-        questionBox.classList.add('hidden');
-        yesBox.classList.remove('hidden');
-    }
-
-    // Array of heart images
-    const heartImages = ['heart1.gif', 'heart2.gif', 'heart3.gif', 'heart4.gif', 'heart5.webp'];
-
-    // Generate floating hearts
-    function createHeart() {
-        const heart = document.createElement('div');
-        heart.classList.add('heart');
-
-        const img = heartImages[Math.floor(Math.random() * heartImages.length)];
-        heart.style.backgroundImage = `url('${img}')`;
-
-        heart.style.left = Math.random() * 100 + 'vw';
-        heart.style.animationDuration = (5 + Math.random() * 5) + 's';
-
-        heartsContainer.appendChild(heart);
-
-        setTimeout(() => {
-            heart.remove();
-        }, 10000);
-    }
-
-    setInterval(createHeart, 500);
-});
+setInterval(spawnFlower,700);

@@ -1,52 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Valentine Surprise</title>
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Dancing+Script&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Valentine</title>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Dancing+Script&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Background music -->
-  <audio id="romanceMusic" src="romantic-music.mp3" autoplay loop></audio>
 
-  <!-- Hearts container -->
-  <div id="heartsContainer"></div>
+<audio autoplay loop>
+  <source src="romantic-music.mp3" type="audio/mpeg">
+</audio>
 
-  <div id="container">
-    <!-- Intro message -->
-    <div id="messageBox">
-      <p id="introMessage">
-        I know you're my girlfriend and my love already. I didn’t plan to make this, but since you want to know what my plan for Valentine’s Day is, first let me ask you this, my princess…
-      </p>
-      <button id="nextBtn">Next</button>
-    </div>
+<!-- Fixed hearts -->
+<div class="fixed-hearts">
+  <img src="heart1.gif">
+  <img src="heart2.gif">
+  <img src="heart3.gif">
+  <img src="heart4.gif">
+  <img src="heart5.gif">
+</div>
 
-    <!-- Valentine question -->
-    <div id="questionBox" class="hidden">
-      <p id="valentineQuestion">
-        My Baby, My Love, My Princess, My Dragon, My One and Only Ayshea… Will you be my Valentine?
-      </p>
-      <div class="choices">
-        <button id="yesBtn">Yes</button>
-        <button id="noBtn">No</button>
-      </div>
-    </div>
+<!-- Floating flowers -->
+<div id="flowers"></div>
 
-    <!-- No box -->
-    <div id="noBox" class="hidden">
-      <p>Hmpp… I love you so much. Don’t be silly, my beautiful, pretty princess!</p>
-      <button id="retryBtn">Yes or Yes</button>
-    </div>
+<div class="box">
 
-    <!-- Yes box -->
-    <div id="yesBox" class="hidden">
-      <p>Yay! 💖 You’re mine forever!</p>
-      <img src="kiss-scene.gif" alt="Kiss scene" class="kissGif">
-    </div>
-  </div>
+<div id="intro">
+  <p>
+  I know you're my girlfriend and my love already. I didn’t plan to make this, but since you want to know what my plan for Valentine’s Day is, first let me ask you this, my princess…
+  </p>
+  <button onclick="goQuestion()">Next</button>
+</div>
 
-  <script src="script.js"></script>
+<div id="step1" class="hidden">
+  <p>My Baby, My Love, My Princess, My Dragon, My One and Only Ayshea…</p>
+</div>
+
+<div id="step2" class="hidden">
+  <p>Will you be my Valentine?</p>
+  <button onclick="yes()">Yes</button>
+  <button onclick="no()">No</button>
+</div>
+
+<div id="noBox" class="hidden">
+  <p>Hmpp… I love you so much. Don’t be silly, my beautiful, pretty princess!</p>
+  <button onclick="yes()">Yes</button>
+  <button onclick="yes()">Yes</button>
+</div>
+
+<div id="yesBox" class="hidden">
+  <p>Yay! You’re mine forever!</p>
+  <img src="kiss-scene.gif" class="kiss">
+</div>
+
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
